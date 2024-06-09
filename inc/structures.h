@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   structures.h                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: demre <demre@student.42malaga.com>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 16:30:35 by demre             #+#    #+#             */
-/*   Updated: 2024/05/16 11:44:22 by demre            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef STRUCTURES_H
 # define STRUCTURES_H
 
@@ -20,10 +8,16 @@ typedef struct s_data
 	mlx_t			*mlx;
 	mlx_image_t		*world;
 	mlx_image_t		*minimap;
+	mlx_image_t		*sprite;
 	mlx_texture_t	*wall_no;
 	mlx_texture_t	*wall_so;
 	mlx_texture_t	*wall_we;
 	mlx_texture_t	*wall_ea;
+	mlx_texture_t	*door_close;
+	mlx_texture_t	*sprite_texture1;
+	mlx_texture_t	*sprite_texture2;
+	mlx_texture_t	*sprite_texture3;
+	mlx_texture_t	*sprite_texture4;
 	int				map_line;
 	int				map_departure_count;
 	char			depart_position;
@@ -34,6 +28,16 @@ typedef struct s_data
 	char			*east_path;
 	unsigned int	floor_color;
 	unsigned int	sky_color;
+	int				display_minimap;
+	unsigned int	minimap_tile_px;
+	unsigned int	mm_max_width_px;
+	unsigned int	mm_max_height_px;
+	double			mm_max_col;
+	double			mm_max_row;
+	double			mm_row_start_px;
+	double			mm_row_end_px;
+	double			mm_col_start_px;
+	double			mm_col_end_px;
 	unsigned int	col;
 	unsigned int	row;
 	double			player_x;
@@ -42,6 +46,12 @@ typedef struct s_data
 	double			player_speed;
 	double			angle_step;
 	double			view_angle;
+	int				loop;
+	bool			player_can_open_door;
+	bool			door_is_open;
+	double			x_door_op;
+	double			y_door_op;
+	double			prev_mouse_x;
 }			t_data;
 
 // ----------- Identifier flags
@@ -84,6 +94,10 @@ typedef struct s_pfv
 	double	wall_y;
 	double	wall_x_n1;
 	double	wall_y_n1;
+	char	obstacle;
+	int		obs_x;
+	int		obs_y;
+	bool	door_found;
 }			t_pfv;
 
 // ----------- Ray-Casting
@@ -101,8 +115,6 @@ typedef struct s_map
 	double	b;
 }			t_map;
 
-// ----------- Corner identifier
-
 typedef struct s_corner
 {
 	bool	south_west_blocked;
@@ -110,5 +122,21 @@ typedef struct s_corner
 	bool	north_west_blocked;
 	bool	north_est_blocked;
 }			t_corner;
+
+// ----------- player icon minimap
+
+typedef struct s_mm_plyr
+{
+	unsigned int	center_x;
+	unsigned int	center_y;
+	double			radius;
+	double			dx;
+	double			dy;
+	int				x;
+	int				y;
+	int				steps;
+	double			x_inc;
+	double			y_inc;
+}			t_mm_plyr;
 
 #endif

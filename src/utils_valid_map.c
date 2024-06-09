@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   utils_valid_map.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: demre <demre@student.42malaga.com>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 11:19:16 by blarger           #+#    #+#             */
-/*   Updated: 2024/05/14 12:13:07 by demre            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "cub3d.h"
+#include "raycast3d.h"
 
 int	check_first_line(char *line, char *scd_line)
 {
@@ -92,7 +80,7 @@ int	line_has_valid_char(t_data *data, char *line, int y)
 		if (line[i] != OUT && line[i] != WALL
 			&& line[i] != WEST && line[i] != EST
 			&& line[i] != NORTH && line[i] != SOUTH
-			&& line[i] != FLOOR && line[i] != '2')
+			&& line[i] != FLOOR && line[i] != '2' && line[i] != DOOR_CLOSED)
 			return (FAILURE);
 		if (line[i] == WEST || line[i] == EST
 			|| line[i] == NORTH || line[i] == SOUTH)

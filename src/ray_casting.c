@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ray_casting.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: blarger <blarger@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/11 12:25:29 by blarger           #+#    #+#             */
-/*   Updated: 2024/05/15 08:19:03 by blarger          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "cub3d.h"
+#include "raycast3d.h"
 
 double	find_horizontal_intersection(t_data *data, double ray_angle)
 {
@@ -74,5 +62,3 @@ double	get_wall_distance(t_data *data, double ray_angle)
 		distance_to_wall = horizontal_distance;
 	return (distance_to_wall);
 }
-
-/* pfv.i == 96 || pfv.i == 672 || pfv.i == 1248 || */

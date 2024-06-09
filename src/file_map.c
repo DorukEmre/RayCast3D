@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   file_map.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: blarger <blarger@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 11:31:37 by demre             #+#    #+#             */
-/*   Updated: 2024/05/16 12:46:33 by blarger          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "cub3d.h"
+#include "raycast3d.h"
 
 static int	check_map(t_data *data)
 {
@@ -37,7 +25,7 @@ static int	check_map(t_data *data)
 	if (check_last_line(data->map[i - 1], data->map[i - 2]) == FAILURE
 		|| data->map_departure_count != 1)
 		return (FAILURE);
-	return (SUCCESS);
+	return (doors_input(data));
 }
 
 static int	fill_map_empty_space(t_data *data)

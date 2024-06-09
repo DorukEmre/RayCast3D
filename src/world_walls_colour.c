@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   world_walls_colour.c                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: demre <demre@student.42malaga.com>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 11:58:42 by demre             #+#    #+#             */
-/*   Updated: 2024/05/14 18:16:05 by demre            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "cub3d.h"
+#include "raycast3d.h"
 
 uint32_t	pack_rgba(uint8_t pixels[4])
 {
@@ -24,7 +12,7 @@ uint32_t	pack_rgba(uint8_t pixels[4])
 	return (color);
 }
 
-uint32_t	get_colour_from_texture(double ratio_x, double calc_h,
+static uint32_t	get_colour_from_texture(double ratio_x, double calc_h,
 	mlx_texture_t *texture)
 {
 	uint32_t		index;

@@ -3,13 +3,9 @@
 **/*.gch
 a.out
 build/
-test.c
 
 .vscode
 .DS_Store
 *.dSYM
-*/draw.c
-cub3D
-cub3D_bonus
-draft.c
-cub3D_bonus
+
+RayCast3D

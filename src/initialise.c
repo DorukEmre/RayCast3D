@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   initialise.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: demre <demre@student.42malaga.com>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 15:03:08 by demre             #+#    #+#             */
-/*   Updated: 2024/05/14 12:07:10 by demre            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "cub3d.h"
+#include "raycast3d.h"
 
 static int	check_file_extension(char *filename)
 {
@@ -41,7 +29,15 @@ static void	initialise_texture(t_data *data)
 	free(data->south_path);
 	free(data->west_path);
 	free(data->east_path);
-	if (!data->wall_no || !data->wall_so || !data->wall_we || !data->wall_ea)
+	data->sprite_texture1 = mlx_load_png("./texture/flame1.png");
+	data->sprite_texture2 = mlx_load_png("./texture/flame2.png");
+	data->sprite_texture3 = mlx_load_png("./texture/flame3.png");
+	data->sprite_texture4 = mlx_load_png("./texture/flame4.png");
+	data->door_close = mlx_load_png("./texture/forest_door_closed.png");
+	if (!data->wall_no || !data->wall_so || !data->wall_we || !data->wall_ea
+		|| !data->sprite_texture1 || !data->sprite_texture2
+		|| !data->sprite_texture3 || !data->sprite_texture4
+		|| !data->door_close)
 		print_and_exit("Failed to initialise textures", 2, EXIT_FAILURE);
 }
 
@@ -65,7 +61,13 @@ void	get_map_size(t_data *data)
 
 void	initialise(char *filename, t_data *data)
 {
+	data->prev_mouse_x = -1;
+	data->minimap_tile_px = 32;
+	data->display_minimap = TRUE;
 	data->player_speed = 1;
+	data->loop = 0;
+	data->player_can_open_door = false;
+	data->door_is_open = false;
 	data->view_angle = PLAYER_FOV * (M_PI / 180);
 	data->angle_step = PLAYER_FOV * (M_PI / 180) / NUM_OF_RAYS;
 	if (check_file_extension(filename) != SUCCESS)
@@ -76,5 +78,10 @@ void	initialise(char *filename, t_data *data)
 	initialise_mlx(data);
 	initialise_texture(data);
 	initialise_world(data);
+	initialise_minimap(data);
+	initialise_sprite(data);
 	paint_world(data);
+	paint_minimap(data);
+	paint_sprite(data);
+	mlx_set_cursor_mode(data->mlx, MLX_MOUSE_DISABLED);
 }
