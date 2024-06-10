@@ -1,10 +1,10 @@
-NO ./texture/brick_wall_plant.png
-SO ./texture/brick_wall_burning.png
-WE ./texture/brick_wall_man_good.png
-EA ./texture/brick_wall_fireworks.png
+NO ./texture/crab.png 
+SO ./texture/dolphin.png
+WE ./texture/fish.png
+EA ./texture/eyes.png
 
-C 104,136,156
-F 86,61,57
+C 0,51,102
+F 123,63,0
 
 
 1111111111111111111111111111111
