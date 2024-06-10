@@ -58,6 +58,7 @@
 // Initialisation
 
 void			initialise(char *filename, t_data *data);
+void    	initialise_animated_textures(t_data *data);
 int				get_data_from_file(char *filename, t_data *data);
 void			load_elements(int *n_elements, t_data *data, int fd);
 unsigned int	rgb_to_hex(char *rgb_str);

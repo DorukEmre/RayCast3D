@@ -10,11 +10,26 @@ void	exit_game(t_data *data)
 	mlx_delete_texture(data->wall_so);
 	mlx_delete_texture(data->wall_we);
 	mlx_delete_texture(data->wall_ea);
-	mlx_delete_texture(data->door_close);
-	mlx_delete_texture(data->sprite_texture1);
-	mlx_delete_texture(data->sprite_texture2);
-	mlx_delete_texture(data->sprite_texture3);
-	mlx_delete_texture(data->sprite_texture4);
+  for (size_t i = 0; i < 18; i++)
+  {
+  	mlx_delete_texture(data->door_closed[i]);
+  }
+  for (size_t i = 0; i < 2; i++)
+  {
+  	mlx_delete_texture(data->anim1[i]);
+  }
+  for (size_t i = 0; i < 25; i++)
+  {
+  	mlx_delete_texture(data->anim2[i]);
+  }
+  for (size_t i = 0; i < 24; i++)
+  {
+  	mlx_delete_texture(data->anim3[i]);
+  }
+  for (size_t i = 0; i < 10; i++)
+  {
+  	mlx_delete_texture(data->anim4[i]);
+  }
 	mlx_terminate(data->mlx);
 	free_string_array(data->map);
 }

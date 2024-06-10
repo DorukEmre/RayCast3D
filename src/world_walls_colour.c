@@ -33,6 +33,13 @@ static uint32_t	get_colour_from_texture(double ratio_x, double calc_h,
 	return (pack_rgba(rgba));
 }
 
+static mlx_texture_t *get_texture(t_data *data,
+  mlx_texture_t *texture[], int n_frames)
+{
+  int num = data->loop % n_frames;
+  return (texture[num]);
+}
+
 uint32_t	get_col_px_colour(double calc_h, t_data *data, t_pfv pfv)
 {
 	if (pfv.i != 0 && fabs(pfv.wall_y - round(pfv.wall_y)) < 0.00001
@@ -44,19 +51,19 @@ uint32_t	get_col_px_colour(double calc_h, t_data *data, t_pfv pfv)
 	if (pfv.wall_y > data->player_y
 		&& fabs(pfv.wall_y - round(pfv.wall_y)) < 0.00001)
 		return (get_colour_from_texture(1 - pfv.wall_x + (int)pfv.wall_x,
-				calc_h, data->wall_no));
+				calc_h, get_texture(data, data->anim1, 2))); // data->wall_no
 	else if (pfv.wall_y < data->player_y
 		&& fabs(pfv.wall_y - round(pfv.wall_y)) < 0.00001)
 		return (get_colour_from_texture(pfv.wall_x - (int)pfv.wall_x,
-				calc_h, data->wall_so));
+				calc_h, get_texture(data, data->anim4, 10))); // data->wall_so
 	else if (pfv.wall_x > data->player_x
 		&& fabs(pfv.wall_x - round(pfv.wall_x)) < 0.00001)
 		return (get_colour_from_texture(pfv.wall_y - (int)pfv.wall_y,
-				calc_h, data->wall_ea));
+				calc_h, get_texture(data, data->anim3, 24))); // data->wall_ea
 	else if (pfv.wall_x < data->player_x
 		&& fabs(pfv.wall_x - round(pfv.wall_x)) < 0.00001)
 		return (get_colour_from_texture(1 - pfv.wall_y + (int)pfv.wall_y,
-				calc_h, data->wall_we));
+				calc_h, get_texture(data, data->anim2, 25))); // data->wall_we
 	else
 		return (0x33333388);
 }

@@ -4,7 +4,7 @@ NAME		:= RayCast3D
 
 CC			= clang
 CFLAGS		:= -Wextra -Wall -Werror \
-	#-Wunreachable-code -g -fsanitize=address,undefined \
+	-Wunreachable-code -g -fsanitize=address,undefined \
 
 ## LIBS ##
 LIBMLX		:= ./lib/MLX42
@@ -19,7 +19,7 @@ HEADERS		= -I  $(HEADER_DIR) -I ${LIBMLX}/include -I ${LIBFT}
 
 ## SOURCE ##
 SRCS		:= main.c free.c print.c exit.c \
-	initialise.c \
+	initialise.c initialise_animated_textures.c \
 	file_load.c file_elements.c file_elements_utils.c \
 	user_input.c user_input_move.c user_input_check_corner.c\
 	file_map.c utils_valid_map.c utils_ray_casting.c\
@@ -28,7 +28,7 @@ SRCS		:= main.c free.c print.c exit.c \
 	world.c world_walls.c world_walls_colour.c \
 	utils_joinfree.c utils_fill_map.c utils_move_player.c\
 	doors.c doors_input.c\
-	sprite.c world_door_colour.c user_input_mouse.c \
+	world_door_colour.c user_input_mouse.c \
 	world_walls_utils.c \
 
 SRC_DIR	:= src

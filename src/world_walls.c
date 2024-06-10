@@ -1,5 +1,12 @@
 #include "raycast3d.h"
 
+static mlx_texture_t *get_texture(t_data *data,
+  mlx_texture_t *texture[], int n_frames)
+{
+  int num = data->loop % n_frames;
+  return (texture[num]);
+}
+
 static void	paint_column(t_data *data, double display_h,
 	double col_start_y, t_pfv pfv)
 {
@@ -18,7 +25,8 @@ static void	paint_column(t_data *data, double display_h,
 	{
 		if (pfv.obstacle == 'C')
 			wall_color = get_col_px_colour_door((h - col_start_y)
-					/ pfv.calculated_h, data, pfv, data->door_close);
+					/ pfv.calculated_h, data, pfv,
+          get_texture(data, data->door_closed, 18));
 		else
 			wall_color = get_col_px_colour((h - col_start_y)
 					/ pfv.calculated_h, data, pfv);

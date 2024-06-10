@@ -6,14 +6,13 @@ static void	render(void *param)
 
 	data = (t_data *)param;
 	data->loop++;
-	if (data->loop == 8)
+	if (data->loop == 100)
 		data->loop = 0;
 	player_input(data);
 	check_close_door(data);
 	paint_world(data);
 	if (data->display_minimap == TRUE)
 		paint_minimap(data);
-	paint_sprite(data);
 }
 
 int	main(int argc, char **argv)

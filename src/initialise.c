@@ -29,16 +29,8 @@ static void	initialise_texture(t_data *data)
 	free(data->south_path);
 	free(data->west_path);
 	free(data->east_path);
-	data->sprite_texture1 = mlx_load_png("./texture/flame1.png");
-	data->sprite_texture2 = mlx_load_png("./texture/flame2.png");
-	data->sprite_texture3 = mlx_load_png("./texture/flame3.png");
-	data->sprite_texture4 = mlx_load_png("./texture/flame4.png");
-	data->door_close = mlx_load_png("./texture/forest_door_closed.png");
-	if (!data->wall_no || !data->wall_so || !data->wall_we || !data->wall_ea
-		|| !data->sprite_texture1 || !data->sprite_texture2
-		|| !data->sprite_texture3 || !data->sprite_texture4
-		|| !data->door_close)
-		print_and_exit("Failed to initialise textures", 2, EXIT_FAILURE);
+	if (!data->wall_no || !data->wall_so || !data->wall_we || !data->wall_ea)
+		print_and_exit("Failed to initialise wall textures", 2, EXIT_FAILURE);
 }
 
 void	get_map_size(t_data *data)
@@ -77,11 +69,10 @@ void	initialise(char *filename, t_data *data)
 	get_map_size(data);
 	initialise_mlx(data);
 	initialise_texture(data);
+	initialise_animated_textures(data);
 	initialise_world(data);
 	initialise_minimap(data);
-	initialise_sprite(data);
 	paint_world(data);
 	paint_minimap(data);
-	paint_sprite(data);
 	mlx_set_cursor_mode(data->mlx, MLX_MOUSE_DISABLED);
 }

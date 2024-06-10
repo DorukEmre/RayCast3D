@@ -13,11 +13,11 @@ typedef struct s_data
 	mlx_texture_t	*wall_so;
 	mlx_texture_t	*wall_we;
 	mlx_texture_t	*wall_ea;
-	mlx_texture_t	*door_close;
-	mlx_texture_t	*sprite_texture1;
-	mlx_texture_t	*sprite_texture2;
-	mlx_texture_t	*sprite_texture3;
-	mlx_texture_t	*sprite_texture4;
+	mlx_texture_t	*door_closed[18];
+	mlx_texture_t	*anim1[2];
+	mlx_texture_t	*anim2[25];
+	mlx_texture_t	*anim3[24];
+	mlx_texture_t	*anim4[10];
 	int				map_line;
 	int				map_departure_count;
 	char			depart_position;
