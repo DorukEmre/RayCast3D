@@ -18,11 +18,11 @@ void	exit_game(t_data *data)
   {
   	mlx_delete_texture(data->anim1[i]);
   }
-  for (size_t i = 0; i < 25; i++)
+  for (size_t i = 0; i < 13; i++) // 25
   {
   	mlx_delete_texture(data->anim2[i]);
   }
-  for (size_t i = 0; i < 24; i++)
+  for (size_t i = 0; i < 16; i++) // 24
   {
   	mlx_delete_texture(data->anim3[i]);
   }

@@ -4,7 +4,7 @@ NAME		:= RayCast3D
 
 CC			= clang
 CFLAGS		:= -Wextra -Wall -Werror \
-	-Wunreachable-code -g -fsanitize=address,undefined \
+#	-Wunreachable-code -g -fsanitize=address,undefined \
 
 ## LIBS ##
 LIBMLX		:= ./lib/MLX42

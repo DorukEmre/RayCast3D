@@ -64,8 +64,8 @@ uint32_t	get_col_px_colour(double calc_h, t_data *data, t_pfv pfv)
   {
     text_no = get_current_texture(data, data->anim1, 2);
     text_so = get_current_texture(data, data->anim4, 10);
-    text_ea = get_current_texture(data, data->anim3, 24);
-    text_we = get_current_texture(data, data->anim2, 25);
+    text_ea = get_current_texture(data, data->anim3, 16); // 25
+    text_we = get_current_texture(data, data->anim2, 13); // 24
   }
 
 	if (pfv.i != 0 && fabs(pfv.wall_y - round(pfv.wall_y)) < 0.00001

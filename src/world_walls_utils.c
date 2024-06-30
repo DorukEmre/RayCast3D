@@ -2,7 +2,7 @@
 
 void	calculate_col_height(t_pfv *pfv)
 {
-	pfv->calculated_h = 0.94 * WIDTH / pfv->ray_length;
+	pfv->calculated_h = 0.95 * WIDTH / pfv->ray_length;
 	if (pfv->calculated_h > HEIGHT)
 		pfv->display_h = HEIGHT;
 	else
