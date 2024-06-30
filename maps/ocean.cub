@@ -3,8 +3,8 @@ SO ./texture/dolphin.png
 WE ./texture/fish.png
 EA ./texture/eyes.png
 
-C 0,51,102
-F 123,63,0
+C 22,117,135
+F 92,209,217
 
 
 1111111111111111111111111111111

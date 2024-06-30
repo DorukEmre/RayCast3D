@@ -9,8 +9,9 @@ static void	render(void *param)
 	if (data->loop == 100)
 		data->loop = 0;
 	player_input(data);
-	check_close_door(data);
-	paint_world(data);
+  if (data->map_has_doors == true)
+    check_close_door(data);
+  paint_world(data);
 	if (data->display_minimap == TRUE)
 		paint_minimap(data);
 }

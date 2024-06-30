@@ -47,11 +47,13 @@ typedef struct s_data
 	double			angle_step;
 	double			view_angle;
 	int				loop;
+  bool      map_has_doors;
 	bool			player_can_open_door;
 	bool			door_is_open;
 	double			x_door_op;
 	double			y_door_op;
 	double			prev_mouse_x;
+  struct timeval  start_time;
 }			t_data;
 
 // ----------- Identifier flags

@@ -6,6 +6,7 @@
 # include <errno.h>
 # include <string.h>
 # include <sys/stat.h>
+# include <sys/time.h>
 # include <fcntl.h>
 # include <math.h>
 # include "MLX42/MLX42.h"
@@ -33,11 +34,10 @@
 
 // Windows param
 
-# define WIDTH 1920
-# define HEIGHT 1280
+# define WIDTH 1280
+# define HEIGHT 1024
 # define PLAYER_FOV 60
-# define NUM_OF_RAYS 1920
-# define SENSIBILITY 0.01
+# define NUM_OF_RAYS 1536
 
 // Ray-Casting
 

@@ -51,6 +51,25 @@ void	get_map_size(t_data *data)
 	}
 }
 
+void	does_map_has_doors(t_data *data)
+{
+  int i = 0;
+  int j;
+  data->map_has_doors = false;
+  
+	while (data->map[i])
+	{
+    j= 0;
+	  while (data->map[i][j])
+    {
+      if (data->map[i][j] == 'C')
+        data->map_has_doors = true;
+      j++;
+    }
+    i++;
+  }
+}
+
 void	initialise(char *filename, t_data *data)
 {
 	data->prev_mouse_x = -1;
@@ -62,11 +81,13 @@ void	initialise(char *filename, t_data *data)
 	data->door_is_open = false;
 	data->view_angle = PLAYER_FOV * (M_PI / 180);
 	data->angle_step = PLAYER_FOV * (M_PI / 180) / NUM_OF_RAYS;
+  gettimeofday(&data->start_time, NULL);
 	if (check_file_extension(filename) != SUCCESS)
 		return (print_and_exit("Wrong file extension", 2, EXIT_FAILURE));
 	if (get_data_from_file(filename, data) != SUCCESS)
 		return (print_and_exit("Wrong map", 2, EXIT_FAILURE));
 	get_map_size(data);
+  does_map_has_doors(data);
 	initialise_mlx(data);
 	initialise_texture(data);
 	initialise_animated_textures(data);
