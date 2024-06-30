@@ -55,7 +55,7 @@ After building the project, you can execute the program using:
   src/: Contains the source code files.\
   inc/: Contains the header files.\
   lib/: Contains the libraries (MLX42 and libft).\
-  maps/: Contains example map files.\
+  maps/: Contains example map files.
 
 ## Makefile Targets
 
@@ -64,13 +64,13 @@ After building the project, you can execute the program using:
   libft: Builds the libft library.\
   clean: Removes object files and build directory.\
   fclean: Cleans up all build files and the executable.\
-  re: Cleans and rebuilds the project.\
+  re: Cleans and rebuilds the project.
 
 
 ## Acknowledgements
 
   MLX42: A modern version of the MiniLibX library for graphics.\
-  Developed with @BenjaminLarger\
+  Developed with @BenjaminLarger
 
 
 ## Demo
