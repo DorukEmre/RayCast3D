@@ -1,6 +1,6 @@
 # RayCast3D
 
-RayCast3D is a first-person 3D game where the player navigates through a maze.
+RayCast3D is a first-person 3D game where the player navigates through a maze.\
 The project explores raycasting, graphical rendering, texture mapping and interactive gameplay. It is built in C.
 
 ![Screenshot of RayCast3D](RayCast3D_screenshot.png)
@@ -52,25 +52,25 @@ After building the project, you can execute the program using:
 
 ## Project Structure
 
-  src/: Contains the source code files.
-  inc/: Contains the header files.
-  lib/: Contains the libraries (MLX42 and libft).
-  maps/: Contains example map files.
+  src/: Contains the source code files.\
+  inc/: Contains the header files.\
+  lib/: Contains the libraries (MLX42 and libft).\
+  maps/: Contains example map files.\
 
 ## Makefile Targets
 
-  all: Builds the project and required libraries.
-  libmlx: Builds the MLX42 library.
-  libft: Builds the libft library.
-  clean: Removes object files and build directory.
-  fclean: Cleans up all build files and the executable.
-  re: Cleans and rebuilds the project.
+  all: Builds the project and required libraries.\
+  libmlx: Builds the MLX42 library.\
+  libft: Builds the libft library.\
+  clean: Removes object files and build directory.\
+  fclean: Cleans up all build files and the executable.\
+  re: Cleans and rebuilds the project.\
 
 
 ## Acknowledgements
 
-  MLX42: A modern version of the MiniLibX library for graphics.
-  Developed with @BenjaminLarger
+  MLX42: A modern version of the MiniLibX library for graphics.\
+  Developed with @BenjaminLarger\
 
 
 ## Demo
