@@ -75,4 +75,4 @@ After building the project, you can execute the program using:
 
 ## Demo
 
-[![Download Video](RayCast3D_screenshot.png)](RayCast3D_720p.mp4)
+![Project demo gif](RayCast3D_demo.gif)
