@@ -3,7 +3,7 @@
 RayCast3D is a first-person 3D game where the player navigates through a maze.\
 The project explores raycasting, graphical rendering, texture mapping and interactive gameplay. It is built in C.
 
-![Screenshot of RayCast3D](RayCast3D_screenshot.png)
+![Project demo gif](RayCast3D_demo.gif)
 
 ## Features
 
@@ -30,7 +30,7 @@ The project explores raycasting, graphical rendering, texture mapping and intera
   cd RayCast3D
   ```
 
-2. Make sure you have the required libraries installed. If you're using Homebrew, you can install GLFW with:
+2. Make sure the required libraries are installed. If using Homebrew, install GLFW with:
   ```sh
   brew install glfw
   ```
@@ -42,7 +42,7 @@ The project explores raycasting, graphical rendering, texture mapping and intera
 
 ## Usage
 
-After building the project, you can execute the program using:
+After building the project, execute the program using:
   ```sh
   ./RayCast3D maps/ocean.cub
   ```
@@ -52,19 +52,19 @@ After building the project, you can execute the program using:
 
 ## Project Structure
 
-  src/: Contains the source code files.\
-  inc/: Contains the header files.\
-  lib/: Contains the libraries (MLX42 and libft).\
-  maps/: Contains example map files.
+    src/ source code files
+    inc/ header files
+    lib/ libraries (MLX42 and libft)
+    maps/ example map files
 
 ## Makefile Targets
 
-  all: Builds the project and required libraries.\
-  libmlx: Builds the MLX42 library.\
-  libft: Builds the libft library.\
-  clean: Removes object files and build directory.\
-  fclean: Cleans up all build files and the executable.\
-  re: Cleans and rebuilds the project.
+    all: Builds the project and required libraries.\
+    libmlx: Builds the MLX42 library.\
+    libft: Builds the libft library.\
+    clean: Removes object files and build directory.\
+    fclean: Cleans up all build files and the executable.\
+    re: Cleans and rebuilds the project.
 
 
 ## Acknowledgements
@@ -72,7 +72,4 @@ After building the project, you can execute the program using:
   MLX42: A modern version of the MiniLibX library for graphics.\
   Developed with @BenjaminLarger
 
-
-## Demo
-
-![Project demo gif](RayCast3D_demo.gif)
+![Screenshot of RayCast3D](RayCast3D_screenshot.png)
